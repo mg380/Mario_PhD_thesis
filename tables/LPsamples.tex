@@ -1,0 +1,36 @@
+%\documentclass[10pt]{article}
+%\usepackage[usenames]{color} %used for font color
+%\usepackage{amssymb} %maths
+%\usepackage{amsmath} %maths
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\usepackage{multirow}
+%\usepackage{graphicx}\begin{document}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+%\begin{table}[!hbt]
+\resizebox{\textwidth}{!}{\begin{tabular}{ccccc} \hline 
+Processes & Generators & PDF & veto / filter & selection / comments \\ \hline \hline
+\multirow{5}{*}{\begin{tabular}[c]{@{}c@{}}\\ \\ \\ \\ \\ \textbf{Z+jets}\\ \textbf{W+jets}\end{tabular}} & \multirow{3}{*}{\textsc{Sherpa v2.2.1}} & \multirow{3}{*}{\textsc{NNPDF3.0 NNLO}} & \begin{tabular}[c]{@{}c@{}}c-jet veto and b-jet veto \\ OR \\ c-jet filter and b-jet veto \\ OR \\ b-jet filter\end{tabular} & \begin{tabular}[c]{@{}c@{}}$m(\ell,\ell)\,>\,40$ GeV\\  $\textrm{max}(\textrm{HT},p_T^V)\,\in\,[0,70,140,280,500,1000,\textrm{inf}]$\end{tabular} \\ \cline{4-5} 
+ &  &  & b-jet veto OR b-jet filter & \begin{tabular}[c]{@{}c@{}}10 GeV $<\,m(\ell,\ell)\,<\,$ 40 GeV,\\ $\textrm{max}(\textrm{HT},p_T^V)\,\in\,[0,70,140,280,\textrm{inf}]$\end{tabular} \\ \cline{2-5} 
+ & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\textsc{MadGraph5\_aMC@NLO v2.2.3.p4} \\                              + \textsc{Pythia 8} + \textsc{EvtGen v1.2.0}\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\textsc{A14}\\ \textsc{NNPDF2.3 LO}\end{tabular} & \begin{tabular}[c]{@{}c@{}}c-jet veto and b-jet veto\\ OR\\ c-jet filter and b-jet veto\\ OR\\ b-jet filter\end{tabular} & \begin{tabular}[c]{@{}c@{}}$m(\ell,\ell)\,>40$ GeV\\  $\textrm{HT}\,\in\,[0,70,140,280,500,1000,2000,\textrm{inf}]$\end{tabular} \\ \cline{4-5} 
+ &  &  & \multicolumn{1}{l}{} & $N_p\,\in\,[0,1,2,3,4]$ (*only for some $Z\rightarrow\tau\tau$ samples) \\ \cline{2-5} 
+ & \textbf{ \textsc{Powheg v1} + \textsc{Pythia 8} + \textsc{EvtGen v1.2.0}} & \begin{tabular}[c]{@{}c@{}}\textbf{\textsc{AZNLO}}\\ \textbf{\textsc {CTEQ6L1}}\end{tabular} &  & $m(\ell,\ell) > 60$ GeV \\ \hline \hline
+\multirow{4}{*}{\begin{tabular}[c]{@{}c@{}}\\ \\ \\ \\ Multiboson\end{tabular}} & \begin{tabular}[c]{@{}c@{}}\\ \\ \textsc{Sherpa v2.2.1}\end{tabular} & \multirow{3}{*}{\begin{tabular}[c]{@{}c@{}}\\  \\ \\ \textsc{NNPDF3.0 NNLO}\end{tabular}} &  & on shell diboson production with factorised decays \\ \cline{2-2} \cline{4-5} 
+ & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}\\ \\ \textsc{Sherpa v2.2.2}\end{tabular}} &  & \multirow{2}{*}{} & \begin{tabular}[c]{@{}c@{}}$m(\ell,\ell)_{SFOS} \,>\, 4$ GeV\\  $p_T(\ell_1)\,>\,5$ GeV\\  $p_T(\ell_2)\,>\,5$ GeV\end{tabular} \\ \cline{5-5} 
+ &  &  &  & \begin{tabular}[c]{@{}c@{}}$m(\ell,\ell)\,>\,2\times m_{\ell}+250$ MeV\\ ($p_T(\ell_1)\,>\,20$ GeV OR $p_T(\ell_2)\,>\,50$ GeV)\\ AND\\ ($p_T(\ell_2)\,<\,5$ GeV OR $m(\ell_{SFOS == 1})\,<\,4$ GeV)\end{tabular} \\ \cline{2-5} 
+ & \textsc{Powheg v2} + \textsc{Pythia 8} + \textsc{EvtGen v1.2.0} & \begin{tabular}[c]{@{}c@{}}\textsc{AZNLO}\\ \textsc{CTEQ6L1}\end{tabular} & \multicolumn{1}{l}{} & $m(\ell,\ell)_{min}\,>\,4$ GeV \\ \hline \hline
+\multirow{4}{*}{\textbf{Dijets}} & \multirow{1}{*}{Herwig v7.0.4 + EvtGen v1.6.0} & \begin{tabular}[c]{@{}c@{}}\textsc{NNPDF3.0 NLO} (ME)\\\textsc{MMHT2014} (shower/MPI)\end{tabular} &  & JZx with x $\in[1,2,3,4,5,6,7,8,9,10,11]$ \\ \cline{2-3} \cline{5-5} \\
+ & \textbf{\textsc{Pythia 8} + \textsc{EvtGen v1.2.0}}  & \begin{tabular}[c]{@{}c@{}}\textbf{\textsc{A14}}\\ \textbf{\textsc{NNPDF23LO}}\end{tabular} & & JZxW with x $\in[1,2,3,4,5,6,7,8,9,10,11,12]$ \\ \hline \hline
+\multirow{9}{*}{single top + $t\bar{t}$} & \multirow{4}{*}{\textsc{Powheg} + \textsc{Pythia 8} + \textsc{EvtGen v1.6.0}} & \multirow{4}{*}{\begin{tabular}[c]{@{}c@{}}\textsc{A14}\\ \textsc{NNPDF23LO}\end{tabular}} & non-hadronic decays & \multirow{2}{*}{$h_{damp}\,=\,258.75$ GeV (1.5 $\times$ top mass)} \\ \cline{4-4}
+ &  &  & hadronic decays &  \\ \cline{4-5} 
+ &  &  & inclusive & \multicolumn{1}{l}{} \\ \cline{4-4}
+ &  &  & leptonic decay & \multicolumn{1}{l}{} \\ \cline{2-5} 
+ & \multirow{5}{*}{\textsc{Powheg} + \textsc{Herwig v7.0.4} + \textsc{EvtGen v1.6.0}} & \multirow{5}{*}{\begin{tabular}[c]{@{}c@{}}\textsc{NNPDF3.0 NLO} (ME)\\ \textsc{MMHT2014} (shower/MPI)\end{tabular}} & single lepton & \multirow{3}{*}{$h_{damp}\,=\,258.75$ GeV (1.5 $\times$ top mass)} \\ \cline{4-4}
+ &  &  & di-lepton &  \\ \cline{4-4}
+ &  &  & all hadronic &  \\ \cline{4-5} 
+ &  &  & leptonic decay & \multicolumn{1}{l}{} \\ \cline{4-4}
+ &  &  & inclusive & \multicolumn{1}{l}{} \\ \hline 
+\end{tabular}}
+%\end{table}
+%
+%\end{document}

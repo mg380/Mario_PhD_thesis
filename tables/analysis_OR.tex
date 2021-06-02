@@ -1,0 +1,23 @@
+%\documentclass[10pt]{article}
+%\usepackage[usenames]{color} %used for font color
+%\usepackage{amssymb} %maths
+%\usepackage{amsmath} %maths
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\begin{document}
+%\begin{table}[]
+\begin{tabular}{cccc}
+\hline 
+Step & \begin{tabular}[c]{@{}c@{}}Object \\ removed\end{tabular} & \begin{tabular}[c]{@{}c@{}}Object \\ compared against\end{tabular} & Condition \\ \hline \hline
+1. & electron & electron & shared track \\
+2. & tau & electron & $\Delta R\,<\,0.2$ \\
+3. & tau & muon & $\Delta R\,<\,0.2$ \\
+4. & electron & muon & shared ID track \\
+5. & jet & electron & $\Delta R\,<\,0.2$ \\
+6. & electron & jet & $\Delta R\,<\,0.4$ \\
+7. & jet & muon & \begin{tabular}[c]{@{}c@{}}N. tracks < 3 and \\ $\Delta R\,<\,0.2$\end{tabular} \\
+8. & muon & jet & $\Delta R\,<\,0.4$ \\
+9. & jet & tau & $\Delta R\,<\,0.2$ \\ \hline 
+\end{tabular}
+%\end{table}
+%
+%\end{document}

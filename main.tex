@@ -1,0 +1,319 @@
+%---------------------------------------------------
+% University of Sussex thesis template
+% Last Edit by Mario Grandi, Oct 2020
+%---------------------------------------------------
+\documentclass[a4paper,11pt,oneside]{memoir}
+\usepackage{capt-of}
+\usepackage[font=footnotesize, labelfont=bf, labelsep=colon]{caption}
+\setcounter{tocdepth}{3} % Depth of sections to include in the table of contents - currently up to subsections 
+\setsecnumdepth{subsection}% % Depth of sections to number in the text itself - currently up to subsections
+\captionnamefont{\footnotesize} % Size of caption text
+\captiontitlefont{\footnotesize} % Size of caption title
+%\hangcaption % indent caption
+\newsubfloat{figure} % Allow subfloats in figure environment
+\usepackage[british]{babel}
+\usepackage[utf8]{inputenc} 
+\usepackage{fourier} % font
+\usepackage[T1]{fontenc} 
+\usepackage{latex/atlasphysics} % ATLAS Class for variable etc
+\usepackage{physics}
+\usepackage{enumerate}
+\usepackage{epigraph}
+\usepackage[printonlyused, withpage]{acronym}
+\usepackage{placeins}
+\usepackage[hang]{footmisc}
+\usepackage{tablefootnote}
+\usepackage{multicol} % multicolumn text
+\usepackage{wrapfig} % figures wrapped in text
+\usepackage{lscape}  % for tables in landscape mode
+\usepackage{booktabs} % lines for tables
+\usepackage{lineno} % Line Numbers 
+%---------------------------------------------------
+% OTHER FORMATTING/LAYOUT DECLARATIONS
+%---------------------------------------------------
+\usepackage{titlesec, color, xcolor, calc, blindtext}
+\usepackage[pdftex]{graphicx}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{mathrsfs,commath}
+\usepackage{amssymb}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage{cancel}
+\usetikzlibrary{decorations.markings,calc,shapes,arrows}
+
+%\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{float}
+
+\usepackage{sidecap}
+%\usepackage{floatrow}
+\usepackage{xfrac}
+%---------------------------------------------------
+% LINE SPACING AND FOOTNOTE MARGIN
+%---------------------------------------------------
+\newcommand{\linespacing}{1.25}
+\renewcommand{\baselinestretch}{\linespacing}
+\setlength{\footnotemargin}{3mm}
+%---------------------------------------------------
+% BIBLIOGRAPHY STYLE
+%---------------------------------------------------
+\usepackage{cite}
+\bibliographystyle{latex/atlasBibStyleWithTitle}
+%---------------------------------------------------
+% DOCUMENT VARIABLES
+% Fill in the lines below to enter your information into the thesis template
+% Each of the commands can be cited anywhere in the thesis
+%---------------------------------------------------
+\newcommand{\myTitle}{Search for supersymmetry with the ATLAS detector at the Large Hadron Collider in final states with two hadronically decaying $\tau$-leptons}
+\newcommand{\mySubtitle}{Fantastic taus and Where to Find Them\xspace}
+\newcommand{\myDegree}{Doctor of Philosophy \xspace}
+\newcommand{\myName}{Mario \textsc{Grandi}\xspace}
+\newcommand{\myProf}{Prof. Fabrizio P. \textsc{Salvatore}\xspace}
+\newcommand{\myOtherProf}{Prof. Antonella \textsc{De Santo}\xspace}
+\newcommand{\mySupervisor}{Prof. Fabrizio \textsc{Salvatore}\xspace}
+\newcommand{\myDepartment}{\href{http://www.sussex.ac.uk/epp/}{Experimental Particle Physics Research Group\xspace}}
+\newcommand{\myFaculty}{\href{http://www.sussex.ac.uk/mps/}{School of Mathematical and Physical Sciences\xspace}}
+\newcommand{\myUni}{University of Sussex\xspace}
+\newcommand{\myLocation}{Brighton\xspace}
+\newcommand{\myTime}{\today\xspace}
+\newcommand{\myVersion}{version 1.0\xspace}
+%---------------------------------------------------
+% USEFUL COMMANDS
+%---------------------------------------------------
+\newcommand{\ie}{i.\,e.}
+\newcommand{\Ie}{I.\,e.}
+\newcommand{\eg}{e.\,g.}
+\newcommand{\Eg}{E.\,g.}
+\newcommand{\htau}{$\tau_{had}$}
+\newcommand{\atlas}{ATLAS}
+\newcommand{\mum}{$\mu$m}
+\newcommand{\com}{$\sqrt{s}$}
+\newcommand{\ftau}{fake-$\tau$}
+\newcommand{\ltau}{$\tau$-lepton}
+\newcommand{\fb}{fb$^{-1}$}
+\newcommand{\dr}{$\Delta R$}
+\newcommand{\infb}{fb$^{-1}$}
+\newcommand{\brem}{Bremsstrahlung}
+\newcommand{\dm}{$\Delta$m}
+\newcommand{\mjj}{$m_{jj}$}
+%\newcommand{\pt}{$p_T$}
+%\newcommand{\ttbar}{$t\bar{t}$}
+\DeclareMathAlphabet{\pazocal}{OMS}{zplm}{m}{n}
+%\preto\chapter\acresetall
+%----------------------------------------
+%COMMAND FOR DOING SIDE CAPTION.
+%----------------------------------------
+
+\newcommand{\sidebysidecaption}[4]{%
+\RaggedRight%
+  \begin{minipage}[c]{#1}
+    \vspace*{0pt}
+    #3
+  \end{minipage}
+  \hfill%
+  \begin{minipage}[c]{#2}
+    \vspace*{0pt}
+    #4
+\end{minipage}%
+}
+
+
+%---------------------------------------------------
+% MARGINS 
+%---------------------------------------------------
+% The left-hand-side should be 40mm.The top and bottom margins should be
+% 25mm deep.The right hand margin should be 20mm.
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=4cm,right=2cm,headsep=10pt]{geometry}
+
+%---------------------------------------------------
+% MEMOIR CLASS SETTINGS AND CHAPTER HEADER/STYLE
+%---------------------------------------------------
+\definecolor{chaptercolor}{gray}{0.35}
+% helper macros
+\newcommand\numlifter[1]{\raisebox{-3cm}[0pt][0pt]{\smash{#1}}}
+\newcommand\numindent{\kern5pt}
+\newlength\chaptertitleboxheight
+\makechapterstyle{hansen}{
+  \renewcommand\printchaptername{\raggedleft}
+  \renewcommand\printchapternum{%
+    \begingroup%
+      \leavevmode%
+      \chapnumfont%
+      \strut%
+      \numlifter{\thechapter\hrulefill}%
+      \numindent%
+    \endgroup%
+  }
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{
+    \begingroup%
+      \leavevmode%
+      \chapnumfont%
+      \numlifter{\vphantom{9}}%
+      \numindent%
+    \endgroup}
+    \afterchapternum
+  }
+  \setlength\midchapskip{0pt}
+  \setlength\beforechapskip{\baselineskip}
+  \setlength{\afterchapskip}{4\baselineskip}
+  \renewcommand\chapnumfont{%
+    \fontsize{5cm}{0cm}%
+    \bfseries% or 
+    \itshape
+    %\sffamily%
+    \color{chaptercolor}%
+  }
+  \renewcommand\chaptitlefont{%
+    \normalfont%
+    \Huge%
+    \bfseries%
+    \scshape
+    \raggedright%
+  }%
+  \settototalheight\chaptertitleboxheight{%
+    \parbox{\textwidth}{\chaptitlefont \strut bg\\bg\strut}
+  }
+  \renewcommand\printchaptertitle[1]{
+    \raggedright\parbox[t][\chaptertitleboxheight][t]{.7\textwidth}{%
+      \chaptitlefont\strut ##1  \strut
+    }%
+  }
+}
+
+
+% --------------------------------------------------
+% Set page style
+% --------------------------------------------------
+\renewcommand{\sectionmark}[1]{\markboth{}{\scriptsize{\thesection\ #1} } } % with number of section a
+
+\makepagestyle{custom}% Create custom page style
+\makeoddhead{custom}% Adjust odd header for custom page style
+{\leftmark}% Left odd header
+{\thepage}% Center odd header
+{\rightmark}% Right odd header
+\makeheadrule{custom}{\textwidth}{.5pt}% Header rule width/thickness for custom page style
+\aliaspagestyle{chapter}{custom} % just to save some space
+\copypagestyle{chapter}{plain}
+\makeoddhead{chapter}{}{\thepage}{}
+\makeoddfoot{chapter}{}{}{}
+
+% --------------------------------------------------
+% Remove some warnings 
+% --------------------------------------------------
+\setlength{\headheight}{14pt} % to avoid multiple "\headheight is too small" warnings 
+\setlength{\parskip}{5pt} % to have some space between paragraphs
+\pdfminorversion=6  % to avoid warnings like "PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed"  
+
+% --------------------------------------------------
+% Uncomment for DIGITAL version
+% --------------------------------------------------
+% \usepackage[pdftex,                          % Settings for PDF Metadata
+%             pdfauthor={Fabrizio Miano},
+%             pdftitle={\myTitle},
+%             pdfsubject={PhD Thesis},
+%             pdfkeywords={CERN, Large Hadron Collider (LHC), ATLAS Experiment, Trigger, 
+%                         Supersymmetry, Particle Physics, Big Data, Monte Carlo, Optimisation, Background, Modelling},
+%             pdfproducer={LaTeX},
+%             pdfcreator={pdflatex},
+%             colorlinks, pagebackref, pdfusetitle,            %Default Settings; original sussex template
+%             urlcolor=blue, citecolor=blue, linkcolor=blue,
+%             bookmarksnumbered, plainpages=false]{hyperref}
+% --------------------------------------------------
+% Uncomment for PRINTED version
+% --------------------------------------------------
+\usepackage[pdftex,
+            pdfauthor={Mario Grandi},
+            pdftitle={\myTitle},
+            pdfsubject={PhD Thesis},
+            pdfkeywords={CERN, Large Hadron Collider (LHC), ATLAS Experiment, Trigger, 
+                        Supersymmetry, Particle Physics, Big Data, Monte Carlo, Optimisation, Background, Modelling, Fake Estimation},
+            pdfproducer={LaTeX},
+            pdfcreator={pdflatex},
+            pdfusetitle, bookmarksnumbered, plainpages=false,colorlinks=True]{hyperref}
+% --------------------------------------------------
+
+\graphicspath{{./figures/}} % directory with all the pictures
+\flushbottom
+%---------------------------------------------------
+% BEGIN DOCUMENT
+%---------------------------------------------------
+\begin{document}
+% --- to fix figure numbers 
+\makeatletter
+\renewcommand{\counterwithin}{\@ifstar{\@csinstar}{\@csin}}
+\makeatother
+% ---
+  %---------------------------------------------------
+  % PREAMBLE: roman page numbering i, ii, iii, ...
+  %---------------------------------------------------
+  \pagestyle{custom}% Set page style to custom
+  \chapterstyle{hansen} % Set chapter style
+  \begingroup
+    \frontmatter
+    \pagenumbering{roman}
+    \clearpage\input{FrontBackMatter/Titlepage}
+    \clearpage\input{FrontBackMatter/Dedication} % Dedication page
+    \clearpage\input{FrontBackMatter/Acknowledgments} % Acknowledgements page
+    \clearpage\input{FrontBackMatter/Declaration} % Declaration
+    \clearpage\input{FrontBackMatter/Abstract} % Abstract page
+  \endgroup
+  %---------------------------------------------------
+  % TABLE OF CONTENTS, LISTS OF TABLES & FIGURES
+  %---------------------------------------------------
+  \begingroup
+    \newpage  
+    \setlength{\parskip}{0pt} % To restore distance between Chapters, sections and subsections in the table of contents
+    \pdfbookmark[0]{Contents}{contents_bookmark}
+    \pagestyle{custom}% Set page style to custom
+    \chapterstyle{hansen} % Set chapter style
+    \tableofcontents*  % as per in memoir class 
+  \endgroup
+
+  %---------------------------------------------------
+  % MAIN THESIS TEXT: arabic page numbering 1, 2, 3, ...
+  % THESIS CONTENT - CHAPTERS
+  %---------------------------------------------------
+  \mainmatter
+  \pagenumbering{arabic}
+  \input{Chapters/intro}
+  \acresetall
+  \input{Chapters/theory}
+  \input{Chapters/detector}
+  \input{Chapters/trigger}
+  \input{Chapters/analysis}
+  \input{Chapters/fakes}
+  \input{Chapters/beyondlhc}
+  
+  %\input{Chapters/optimisation}
+  %\input{Chapters/bkgest}
+  %\input{Chapters/results}
+  \input{Chapters/conclusions} 
+  
+  %---------------------------------------------------
+  % APPENDICES
+  %---------------------------------------------------
+  \appendix
+  \input{Chapters/appA.tex}
+  \input{Chapters/appB.tex}
+  %\input{Chapters/beyondlhc}
+  \backmatter
+    \input{FrontBackMatter/Acronyms.tex}
+
+  %---------------------------------------------------
+  % BIBLIOGRAPHY
+  %---------------------------------------------------
+  \clearpage
+  \phantomsection
+  \bibliography{Chapters/bibliography}
+   
+%  \printbibliography
+  \clearpage\input{FrontBackMatter/Colophon}
+
+  %---------------------------------------------------
+  % END DOCUMENT
+  %---------------------------------------------------
+\end{document}

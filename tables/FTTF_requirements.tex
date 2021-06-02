@@ -1,0 +1,19 @@
+%\documentclass[10pt]{article}
+%\usepackage[usenames]{color} %used for font color
+%\usepackage{amssymb} %maths
+%\usepackage{amsmath} %maths
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\usepackage{multirow}
+%
+%\begin{document}
+%\begin{table}[]
+\resizebox{\textwidth}{!}{\begin{tabular}{cccccccc}
+\hline 
+Prong & BDT min & BDT WP  & RNN min & RNN WP & WP region & JVT cut & Trigger Pass \\ \hline \hline
+\multirow{2}{*}{1*}  & 0.00 & Loose & 0.00 & Loose & \multirow{2}{*}{pass} & \multirow{2}{*}{no JVT cut*} & \multirow{2}{*}{no requirement*} \\
+  & 0.05* & Medium*  & 0.01* & Medium* &  &  &  \\
+3*  & 0.50 & Tight  & 0.05* & Tight & fail* & some JVT cut & passed\\ \hline 
+\end{tabular}}
+%\end{table}
+%
+%\end{document}

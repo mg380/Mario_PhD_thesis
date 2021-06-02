@@ -1,0 +1,29 @@
+%\documentclass[10pt]{article}
+%\usepackage[usenames]{color} %used for font color
+%\usepackage{amssymb} %maths
+%\usepackage{amsmath} %maths
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\begin{document}
+%\begin{table}[]
+\begin{tabular}{ccc}
+\hline
+\textbf{Reject Object} & \textbf{Against} & \textbf{Criteria} \\ \hline \hline
+electron & electron & shared track, $p_{T_1}<p_{T_2}$ \\
+tau & electron & $\Delta R<0.2$ \\
+tau & muon & $\Delta R<0.2$ \\
+muon & electron & is a calo-muon, shares ID track \\
+electron & muon & shares ID track \\
+photon & electron & $\Delta R<0.4$ \\
+photon & muon & $\Delta R<0.4$ \\
+jet & electron & $\Delta R<0.2$ \\
+electron & jet & $\Delta R<0.4$ \\
+jet & muon & N. Tracks $<$ 3, $\Delta R<0.2$ \\
+muon & jet & $\Delta R<0.4$ \\
+jet & tau & $\Delta R<0.2$ \\
+photon & jet & $\Delta R<0.4$ \\
+large-R jet & electron & $\Delta R<1.0$ \\
+jet & large-R jet & $\Delta R<1.0$ \\ \hline
+\end{tabular}
+%\end{table}
+%
+%\end{document}

@@ -1,0 +1,34 @@
+%\documentclass[10pt]{article}
+%\usepackage[usenames]{color} %used for font color
+%\usepackage{amssymb} %maths
+%\usepackage{amsmath} %maths
+%\usepackage[utf8]{inputenc} %useful to type directly diacritic characters
+%\usepackage{multirow}
+\renewcommand{\arraystretch}{1.2}
+%\begin{document}
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+%\begin{table}[]
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+%\begin{table}[]
+\begin{tabular}{lccc}
+\hline
+ & \multicolumn{1}{c}{\begin{tabular}[c]{@{}l@{}}Asym. \\ Trigger\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}l@{}}$p_T(\tau_1)$ > 40 GeV\\ $p_T(\tau_2)$ > 30 GeV\end{tabular}} & \multicolumn{1}{c}{\begin{tabular}[c]{@{}l@{}}$p_T(\tau_1)$ > 30 GeV\\ $p_T(\tau_2)$ > 20 GeV\end{tabular}} \\ \hline \hline
+\multicolumn{4}{l}{Background} \\ \hline \hline
+Multiboson & 0.46 & 1.88 & 2.10 \\
+Wjets & 1.08 & 8.12 & 10.78 \\
+Top & 0.00 & 0.00 & 0.00 \\
+Zjets & 8.21 & 21.27 & 22.92 \\ \hline
+Total & 9.75 & 31.27 & 35.80 \\ \hline \hline
+\multicolumn{4}{l}{(\stau,\ninoone) [GeV]} \\ \hline \hline
+(100,1) & 0.61 & 1.80 & 1.92 \\
+(200,1) & 0.31 & 0.60 & 0.62 \\
+(160,100) & 0.12 & 0.35 & 0.38 \\
+(100,60) & 0.13 & 0.51 & 0.55 \\
+(280,160) & 0.08 & 0.16 & 0.17 \\ \hline 
+\end{tabular}
+%\end{table}
+\renewcommand{\arraystretch}{1}
+%\end{table}
+%\end{document}
